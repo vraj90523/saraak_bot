@@ -91,7 +91,7 @@ def gban(bot: Bot, update: Update, args: List[str]):
 
         return
 
-    message.reply_text("*Blows dust off of banhammer* 😉")
+    message.reply_text("*Why so serious* ( ⚆ _ ⚆ )")
 
     banner = update.effective_user  # type: Optional[User]
     send_to_list(bot, SUDO_USERS + SUPPORT_USERS,
@@ -124,7 +124,7 @@ def gban(bot: Bot, update: Update, args: List[str]):
             pass
 
     send_to_list(bot, SUDO_USERS + SUPPORT_USERS, "gban complete!")
-    message.reply_text("Person has been gbanned.")
+    message.reply_text("Person has been gbanned ಠ_ಥ")
 
 
 @run_async
@@ -142,7 +142,7 @@ def ungban(bot: Bot, update: Update, args: List[str]):
         return
 
     if not sql.is_user_gbanned(user_id):
-        message.reply_text("This user is not gbanned!")
+        message.reply_text("This user is not gbanned ｡◕‿‿◕｡")
         return
 
     banner = update.effective_user  # type: Optional[User]
@@ -181,7 +181,7 @@ def ungban(bot: Bot, update: Update, args: List[str]):
 
     send_to_list(bot, SUDO_USERS + SUPPORT_USERS, "un-gban complete!")
 
-    message.reply_text("Person has been un-gbanned.")
+    message.reply_text("Person has been un-gbanned (^̮^)")
 
 
 @run_async
