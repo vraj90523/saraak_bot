@@ -91,6 +91,14 @@ def owo(bot: Bot, update: Update):
     reply_text += ' ' + random.choice(faces)
     message.reply_to_message.reply_text(reply_text)
 
+def shrug(bot: Bot, update: Update):
+    reply_msg = "¯\_(ツ)_/¯"
+    message = update.effective_message
+    if message.reply_to_message:
+        message.reply_to_message.reply_text(reply_msg)
+    else:
+        message.reply_text(reply_msg, quote=True)
+        
 __help__ = "many memz"  # no help string
 
 __mod_name__ = "Memes"
@@ -106,6 +114,7 @@ CRYMOJI_ALIAS_HANDLER = DisableAbleCommandHandler("😭", crymoji)
 BMOJI_HANDLER = DisableAbleCommandHandler("🅱️", bmoji)
 BMOJI_ALIAS_HANDLER = DisableAbleCommandHandler("️b", bmoji)
 OWO_HANDLER = DisableAbleCommandHandler("owo", owo)
+SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug)
 
 dispatcher.add_handler(COPYPASTA_HANDLER)
 dispatcher.add_handler(COPYPASTA_ALIAS_HANDLER)
@@ -118,3 +127,4 @@ dispatcher.add_handler(CRYMOJI_ALIAS_HANDLER)
 dispatcher.add_handler(BMOJI_HANDLER)
 dispatcher.add_handler(BMOJI_ALIAS_HANDLER)
 dispatcher.add_handler(OWO_HANDLER)
+dispatcher.add_handler(SHRUG_HANDLER)
