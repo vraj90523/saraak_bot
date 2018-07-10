@@ -13,7 +13,7 @@ def listsudo(bot: Bot, update: Update):
     reply_msg = ""
     sudo_list = sql.get_sudo_list()
     for i in sudo_list:
-       reply_msg += "\n @" + str(i['name'])
+       reply_msg += "\n" + str(i['name'])
 
     message.reply_text("<b>SUDO USERS:</b> {}\n".format(html.escape(reply_msg)), parse_mode=ParseMode.HTML)
     return
