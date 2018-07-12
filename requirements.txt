@@ -2,6 +2,14 @@ future
 emoji
 requests
 sqlalchemy
-python-telegram-bot>=10.1.0
+python-telegram-bot>=8.0.0
 psycopg2-binary
-feedparser
+pyowm
+bs4
+lxml
+demjson
+PyLyrics
+wget
+gTTS
+telegram
+zalgo_text
