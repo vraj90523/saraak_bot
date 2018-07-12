@@ -1,4 +1,5 @@
 import random, re
+from random import randint
 from telegram import Message, Update, Bot, User
 from telegram import MessageEntity
 from telegram.ext import Filters, MessageHandler, run_async
@@ -252,6 +253,8 @@ __help__ = """
  - /abuse : Abuses the cunt
  - /tts <any text> : Converts text to speech
  - /bluetext : check urself :V
+ - /roll : Roll a dice.
+ - /rlg : Join ears,nose,mouth and create an emo ;-;
  - /zal <any text> : zalgofy! your text
  Lyrics Plugin will take some moar time to come up.
 """
