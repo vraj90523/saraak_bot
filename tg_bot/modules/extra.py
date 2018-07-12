@@ -245,6 +245,15 @@ def decide(bot: Bot, update: Update):
         else:
             update.message.reply_text("Maybe.")
             
+def table(bot: Bot, update: Update):
+            r = randint(1, 100)
+            if r <= 45:
+                update.message.reply_text("(╯°□°）╯彡 ┻━┻")
+            elif r <= 90:
+                update.message.reply_text("Send money bsdk to buy new table to flip")
+            else:
+                update.message.reply_text("Go do some work instead of flippin tables you helpless fagit.")
+		
 __help__ = """
  - /shrug : get shrug XD.
  - /table : get flip/unflip :v.
@@ -268,6 +277,7 @@ SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug)
 BLUETEXT_HANDLER = DisableAbleCommandHandler("bluetext", bluetext)
 RLG_HANDLER = DisableAbleCommandHandler("rlg", rlg)
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
+TABLE_HANDLER = DisableAbleCommandHandler("table", table)
 
 dispatcher.add_handler(ABUSE_HANDLER)
 dispatcher.add_handler(ROLL_HANDLER)
@@ -276,3 +286,4 @@ dispatcher.add_handler(SHRUG_HANDLER)
 dispatcher.add_handler(BLUETEXT_HANDLER)
 dispatcher.add_handler(RLG_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
+dispatcher.add_handler(TABLE_HANDLER)
