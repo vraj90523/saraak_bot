@@ -2,26 +2,20 @@ from telegram import ChatAction
 from gtts import gTTS
 import html
 import urllib.request
-from PyLyrics import *
-import wget
 import re
 import json
-import random
-from random import randint
 from datetime import datetime
 from typing import Optional, List
-import pyowm
 import time
 import requests
 from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram import ParseMode
 from telegram.ext import CommandHandler, run_async, Filters
 from telegram.utils.helpers import escape_markdown, mention_html
-from tg_bot import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS, BAN_STICKER
-from tg_bot.__main__ import STATS, USER_INFO
+from tg_bot import dispatcher
+from tg_bot.__main__ import STATS
 from tg_bot.modules.disable import DisableAbleCommandHandler
 from tg_bot.modules.helper_funcs.extraction import extract_user
-from tg_bot.modules.helper_funcs.filters import CustomFilters
 
 def tts(bot: Bot, update: Update, args):
     current_time = datetime.strftime(datetime.now(), "%d.%m.%Y %H:%M:%S")
