@@ -13,3 +13,7 @@ wget
 gTTS
 telegram
 zalgo_text
+feedparser
+pynewtonmath
+bs4
+lxml
