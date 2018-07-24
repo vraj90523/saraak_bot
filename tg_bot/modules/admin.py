@@ -193,14 +193,25 @@ def adminlist(bot: Bot, update: Update):
     text = "Admins in *{}*:".format(update.effective_chat.title or "this chat")
     for admin in administrators:
         user = admin.user
-        name = "[{}](tg://user?id={})".format(user.first_name + (user.last_name or ""), user.id)
+        status = admin.status
+        name = "[{}](tg://user?id={})".format(user.first_name + " " + (user.last_name or ""), user.id)
         if user.username:
             name = "[{}](tg://user?id={})".format(user.first_name + (user.last_name or ""), user.id)
-        text += "\n - {}".format(name)
+        if status == "creator":
+            text += "\n 🔱 Creator:"
+            text += "\n` • `{} \n\n 🔰 Admin:".format(name)
+    for admin in administrators:
+        user = admin.user
+        status = admin.status
+        name = "[{}](tg://user?id={})".format(user.first_name + " " + (user.last_name or ""), user.id)
+        if user.username:
+            name = "[{}](tg://user?id={})".format(user.first_name + (user.last_name or ""), user.id)
+        if status == "administrator":
+            text += "\n` • `{}".format(name)
 
     update.effective_message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
-
-
+    
+    
 def __chat_settings__(chat_id, user_id):
     return "You are *admin*: `{}`".format(
         dispatcher.bot.get_chat_member(chat_id, user_id).status in ("administrator", "creator"))
