@@ -15,6 +15,32 @@ from tg_bot.modules.helper_funcs.filters import CustomFilters
 USERS_GROUP = 4
 
 
+@run_async
+def quickscope(bot: Bot, update: Update, args: List[int]):
+    if args:
+        chat_id = str(args[1])
+        to_kick = str(args[0])
+    else:
+        update.effective_message.reply_text("You don't seem to be referring to a chat/user")
+    try:
+        bot.kick_chat_member(chat_id, to_kick)
+        update.effective_message.reply_text("Attempted banning " + to_kick + " from" + chat_id)
+    except BadRequest as excp:
+        update.effective_message.reply_text(excp.message + " " + to_kick)
+
+
+@run_async
+def quickunban(bot: Bot, update: Update, args: List[int]):
+    if args:
+        chat_id = str(args[1])
+        to_kick = str(args[0])
+    else:
+        update.effective_message.reply_text("You don't seem to be referring to a chat/user")
+    try:
+        bot.unban_chat_member(chat_id, to_kick)
+        update.effective_message.reply_text("Attempted unbanning " + to_kick + " from" + chat_id)
+    except BadRequest as excp:
+        update.effective_message.reply_text(excp.message + " " + to_kick)
 
 
 @run_async
@@ -74,6 +100,32 @@ def leavechat(bot: Bot, update: Update, args: List[int]):
         bot.leaveChat(chat_id)
     else:
         update.effective_message.reply_text("You don't seem to be referring to a chat")
+
+__help__ = """  
+*Owner only:*
+- /getlink *chatid*: Get the invite link for a specific chat.
+- /banall: Ban all members from a chat
+- /leavechat *chatid : leave a chat
+*Sudo/owner only:*
+- /quickscope *chatid* *userid*: Ban user from chat.
+- /quickunban *chatid* *userid*: Unban user from chat.
+- /snipe *chatid* *string*: Make me send a message to a specific chat.
+- /rban *chatid* *userid" remotely ban a user from a chat
+- /runban *chatid" *userid* remotely unban a user from a chat
+- /Stats: check bot's stats
+- /chatlist: get chatlist 
+- /gbanlist: get gbanned users list
+- /gmutelist: get gmuted users list
+*Support user:*
+- /Gban : Global ban a user
+- /Ungban : Ungban a user
+- /Gmute : Gmute a user
+- /Ungmute : Ungmute a user
+Sudo/owner can use these commands too.
+*Users:*
+- /listsudo Gives a list of sudo users
+- /listsupport gives a list of support users
+"""
 
 __mod_name__ = "Special"
 
