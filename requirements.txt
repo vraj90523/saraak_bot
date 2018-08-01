@@ -17,3 +17,7 @@ feedparser
 pynewtonmath
 bs4
 lxml
+pyowm
+spongemock
+geopy
+
