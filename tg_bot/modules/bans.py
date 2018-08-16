@@ -6,7 +6,7 @@ from telegram.error import BadRequest
 from telegram.ext import run_async, CommandHandler, Filters
 from telegram.utils.helpers import mention_html
 
-from tg_bot import dispatcher, BAN_STICKER, LOGGER
+from tg_bot import dispatcher, BAN_STICKER, LOGGER, OWNER_ID
 from tg_bot.modules.disable import DisableAbleCommandHandler
 from tg_bot.modules.helper_funcs.chat_status import bot_admin, user_admin, is_user_ban_protected, can_restrict, \
     is_user_admin, is_user_in_chat, is_bot_admin
@@ -245,15 +245,19 @@ def kick(bot: Bot, update: Update, args: List[str]) -> str:
 @can_restrict
 def kickme(bot: Bot, update: Update):
     user_id = update.effective_message.from_user.id
-    if is_user_admin(update.effective_chat, user_id):
-        update.effective_message.reply_text("I wish I could... but you're an admin.")
-        return
+    if user_id == OWNER_ID:
+        update.effective_message.reply_text("Sar ;_____;")
+        return 
+    elif is_user_admin(update.effective_chat, user_id):
+          update.effective_message.reply_text("Ok Kicked (Joking)")
+          return
 
     res = update.effective_chat.unban_member(user_id)  # unban on current user = kick
     if res:
         update.effective_message.reply_text("No problem.")
     else:
         update.effective_message.reply_text("Huh? I can't :/")
+
 
 @run_async
 @bot_admin
@@ -263,8 +267,11 @@ def banme(bot: Bot, update: Update):
     user_id = update.effective_message.from_user.id
     chat = update.effective_chat
     user = update.effective_user
-    if is_user_admin(update.effective_chat, user_id):
-        update.effective_message.reply_text("I wish I could... but you're an admin.")
+    if user_id == OWNER_ID:
+        update.effective_message.reply_text("I Go Away ;____;")
+        return
+    elif is_user_admin(update.effective_chat, user_id):
+        update.effective_message.reply_text("Sir Stop making fun 😶")
         return
 
     res = update.effective_chat.kick_member(user_id)  
