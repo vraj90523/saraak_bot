@@ -20,4 +20,4 @@ lxml
 pyowm
 spongemock
 geopy
-
+gsearch
