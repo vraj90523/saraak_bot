@@ -8,7 +8,7 @@ from telegram.ext import run_async, CommandHandler, MessageHandler, Filters
 from telegram.utils.helpers import mention_html
 
 import tg_bot.modules.sql.global_mutes_sql as sql
-from tg_bot import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, STRICT_GMUTE
+from tg_bot import dispatcher, OWNER_ID, SUDO_USERS, SECRET_SUDO_USERS, SUPPORT_USERS, STRICT_GMUTE
 from tg_bot.modules.helper_funcs.chat_status import user_admin, is_user_admin
 from tg_bot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
 from tg_bot.modules.helper_funcs.filters import CustomFilters
@@ -32,6 +32,10 @@ def gmute(bot: Bot, update: Update, args: List[str]):
         message.reply_text("I spy, with my little eye... a sudo user war! Why are you guys turning on each other?")
         return
 
+    if int(user_id) in SECRET_SUDO_USER:
+        message.reply_text("Sar He is a secret sudo user *Grabs Ak47*")
+        return
+    
     if int(user_id) in SUPPORT_USERS:
         message.reply_text("OOOH someone's trying to gmute a support user! *grabs popcorn*")
         return
@@ -299,11 +303,11 @@ you and your groups by removing spam flooders as quickly as possible. They can b
 __mod_name__ = "Global Mutes"
 
 GMUTE_HANDLER = CommandHandler("gmute", gmute, pass_args=True,
-                              filters=CustomFilters.sudo_filter | CustomFilters.support_filter)
+                              filters=CustomFilters.sudo_filter | CustomFilters.support_filter | CustomFilters.secret_sudo_filter)
 UNGMUTE_HANDLER = CommandHandler("ungmute", ungmute, pass_args=True,
-                                filters=CustomFilters.sudo_filter | CustomFilters.support_filter)
+                                filters=CustomFilters.sudo_filter | CustomFilters.support_filter | CustomFilters.secret_sudo_filter)
 GMUTE_LIST = CommandHandler("gmutelist", gmutelist,
-                           filters=CustomFilters.sudo_filter | CustomFilters.support_filter)
+                           filters=CustomFilters.sudo_filter | CustomFilters.support_filter | CustomFilters.secret_sudo_filter)
 
 GMUTE_STATUS = CommandHandler("gmutestat", gmutestat, pass_args=True, filters=Filters.group)
 

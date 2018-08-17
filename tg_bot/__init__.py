@@ -32,6 +32,11 @@ if ENV:
         SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
     except ValueError:
         raise Exception("Your sudo users list does not contain valid integers.")
+                                          
+    try:
+        SECRET_SUDO_USERS = set(int(x) for x in os.environ.get("SECRET_SUDO_USERS", "").split())
+    except ValueError:
+        raise Exception("Your Secret sudo users list does not contain valid integers.")
 
     try:
         SUPPORT_USERS = set(int(x) for x in os.environ.get("SUPPORT_USERS", "").split())
@@ -76,6 +81,11 @@ else:
         raise Exception("Your sudo users list does not contain valid integers.")
 
     try:
+        SECRET_SUDO_USERS = set(int(x) for x in Config.SECRET_SUDO_USERS or [])
+    except ValueError:
+        raise Exception("Your secret sudo users list does not contain valid integers.")
+
+    try:
         SUPPORT_USERS = set(int(x) for x in Config.SUPPORT_USERS or [])
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
@@ -110,6 +120,7 @@ updater = tg.Updater(TOKEN, workers=WORKERS)
 dispatcher = updater.dispatcher
 
 SUDO_USERS = list(SUDO_USERS)
+SECRET_SUDO_USERS = list(SECRET_SUDO_USERS)
 WHITELIST_USERS = list(WHITELIST_USERS)
 SUPPORT_USERS = list(SUPPORT_USERS)
 

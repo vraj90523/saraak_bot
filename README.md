@@ -72,7 +72,7 @@ The following env variables are supported:
 
  - `SUDO_USERS`: A space separated list of user_ids which should be considered sudo users
  - `SUPPORT_USERS`: A space separated list of user_ids which should be considered support users (can gban/ungban,
- nothing else)
+ - `SECRET_SUDO_USERS` : list of id's (not usernames) for users which have sudo acces to bot but secretely.
  - `WHITELIST_USERS`: A space separated list of user_ids which should be considered whitelisted - they can't be banned.
  - `DONATION_LINK`: Optional: link where you would like to receive donations.
  - `CERT_PATH`: Path to your webhook certificate

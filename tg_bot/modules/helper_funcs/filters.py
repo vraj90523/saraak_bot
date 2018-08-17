@@ -1,7 +1,7 @@
 from telegram import Message
 from telegram.ext import BaseFilter
 
-from tg_bot import SUPPORT_USERS, SUDO_USERS
+from tg_bot import SUPPORT_USERS, SUDO_USERS, SECRET_SUDO_USERS
 from tg_bot.modules.sql.users_sql import get_restriction
 
 
@@ -17,7 +17,13 @@ class CustomFilters(object):
             return bool(message.from_user and message.from_user.id in SUDO_USERS)
 
     sudo_filter = _Sudoers()
+                        
+    class _Secreters(BaseFilter):
+        def filter(self, message: Message):
+            return bool(message.from_user and message.from_user.id in SECRET_SUDO_USERS)
 
+    secret_sudo_filter = _Secreters()
+ 
     class _MimeType(BaseFilter):
         def __init__(self, mimetype):
             self.mime_type = mimetype
