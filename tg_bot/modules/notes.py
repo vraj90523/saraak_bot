@@ -32,7 +32,7 @@ ENUM_FUNC_MAP = {
 
 
 # Do not async
-def get(bot, update, notename, show_none=True):
+def get(bot, update, notename, show_none=True, no_format=False):
     if not get_connected_chat(update.effective_message.from_user.id):
         chat_id = update.effective_chat.id
     else:
