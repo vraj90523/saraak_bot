@@ -62,13 +62,33 @@ RUN_STRINGS = (
     "It's funny, because no one cares.",
     "Ah, what a waste. I liked that one.",
     "Frankly, my dear, I don't give a damn.",
-    "My milkshake brings all the boys to yard... So run faster!",
-    "You can't HANDLE the truth!",
-    "A long time ago, in a galaxy far far away... Someone would've cared about that. Not anymore though.",
-    "Hey, look at them! They're running from the inevitable banhammer... Cute.",
-    "Han shot first. So will I.",
-    "What are you running after, a white rabbit?",
-    "As The Doctor would say... RUN!",
+    "Kthnksbye!",
+    "I think you should go home or better a mental asylum.",
+    "Command not found. Just like your brain.",
+    "Do you realize you are making a fool of yourself? Apparently not.",
+    "Bot rule 544 section 9 prevents me from replying to stupid humans like you.",
+    "Sorry, we do not sell brains.",
+    "Believe me you are not normal.",
+    "I bet your brain feels as good as new, seeing that you never use it.",
+    "If I wanted to kill myself I'd climb your ego and jump to your IQ.",
+    "Zombies eat brains... you're safe.",
+    "You didn't evolve from apes, they evolved from you.",
+    "Come back and talk to me when your I.Q. exceeds your age.",
+    "I'm not saying you're stupid, I'm just saying you've got bad luck when it comes to thinking.",
+    "What language are you speaking? Cause it sounds like bullshit.",
+    "Stupidity is not a crime so you are free to go.",
+    "You are proof that evolution CAN go in reverse.",
+    "I would ask you how old you are but I know you can't count that high.",
+    "As an outsider, what do you think of the human race?",
+    "Brains aren't everything. In your case they're nothing.",
+    "Ordinarily people live and learn. You just live.",
+    "I don't know what makes you so stupid, but it really works.",
+    "Keep talking, someday you'll say something intelligent! (I doubt it though)",
+    "Shock me, say something intelligent.",
+    "Your IQ's lower than your shoe size.",
+    "Alas! Your neurotransmitters are no more working.",
+    "Everyone has the right to be stupid but you are abusing the privilege.",
+    "I'm sorry I hurt your feelings when I called you stupid. I thought you already knew that.",
 )
 
 SLAP_TEMPLATES = (
@@ -280,7 +300,7 @@ def get_time(bot: Bot, update: Update, args: List[str]):
 
     location = " ".join(args)
     if location.lower() == bot.first_name.lower():
-        update.effective_message.reply_text("Its always banhammer time for me!")
+        update.effective_message.reply_text("Why so serious?")
         bot.send_sticker(update.effective_chat.id, BAN_STICKER)
         return
 
