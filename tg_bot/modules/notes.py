@@ -15,6 +15,7 @@ from tg_bot.modules.disable import DisableAbleCommandHandler
 from tg_bot.modules.helper_funcs.chat_status import user_admin
 from tg_bot.modules.helper_funcs.misc import build_keyboard, revert_buttons
 from tg_bot.modules.helper_funcs.msg_types import get_note_type
+from tg_bot.modules.sql.remote_sql import get_connected_chat
 
 FILE_MATCHER = re.compile(r"^###file_id(!photo)?###:(.*?)(?:\s|$)")
 
@@ -31,8 +32,12 @@ ENUM_FUNC_MAP = {
 
 
 # Do not async
-def get(bot, update, notename, show_none=True, no_format=False):
-    chat_id = update.effective_chat.id
+def get(bot, update, notename, show_none=True):
+    if not get_connected_chat(update.effective_message.from_user.id):
+        chat_id = update.effective_chat.id
+    else:
+        chat_id = get_connected_chat(update.effective_message.from_user.id).chat_id
+
     note = sql.get_note(chat_id, notename)
     message = update.effective_message  # type: Optional[Message]
 
