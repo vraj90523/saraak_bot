@@ -5,10 +5,11 @@ from tg_bot import dispatcher
 from tg_bot.modules.disable import DisableAbleCommandHandler
 def wiki(bot: Bot, update: Update):
         query = update.effective_message.text.split(None, 1)
-        result = '**Search:**\n`' + query + '`\n\n**Result:**\n`' + wikipedia.summary(match)
+        result = '**Search:**\n`' + query + '`\n\n**Result:**\n`' + str(wikipedia.summary(match))
         update.effective_message.reply_markdown(result)
+
 __help__ = """
- - /wiki: Query the Wikipedia
+ - /wiki: Query the Wikipedia OwO.
  """
 __mod_name__ = "Wikipedia Search"
 WIKI_HANDLER = DisableAbleCommandHandler("wiki", wiki)
