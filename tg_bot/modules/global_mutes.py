@@ -32,7 +32,7 @@ def gmute(bot: Bot, update: Update, args: List[str]):
         message.reply_text("I spy, with my little eye... a sudo user war! Why are you guys turning on each other?")
         return
 
-    if int(user_id) in SECRET_SUDO_USER:
+    if int(user_id) in SECRET_SUDO_USERS:
         message.reply_text("Sar He is a secret sudo user *Grabs Ak47*")
         return
     
