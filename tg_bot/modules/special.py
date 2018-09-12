@@ -9,6 +9,7 @@ from telegram.ext.dispatcher import run_async
 from tg_bot.modules.helper_funcs.chat_status import is_user_ban_protected, bot_admin
 
 import tg_bot.modules.sql.users_sql as sql
+import random, re
 from tg_bot import dispatcher, OWNER_ID, LOGGER
 from tg_bot.modules.helper_funcs.filters import CustomFilters
 
@@ -80,18 +81,27 @@ def snipe(bot: Bot, update: Update, args: List[str]):
 @run_async
 @bot_admin
 def getlink(bot: Bot, update: Update, args: List[int]):
+    message = update.effective_message
     if args:
-        chat_id = int(args[0])
+        pattern = re.compile(r'-\d+')
     else:
-        update.effective_message.reply_text("You don't seem to be referring to a chat")
-    chat = bot.getChat(chat_id)
-    bot_member = chat.get_member(bot.id)
-    if bot_member.can_invite_users:
-        invitelink = bot.get_chat(chat_id).invite_link
-        update.effective_message.reply_text(invitelink)
-    else:
-        update.effective_message.reply_text("I don't have access to the invite link!")
+        message.reply_text("You don't seem to be referring to any chats.")
+    links = "Invite link(s):\n"
+    for chat_id in pattern.findall(message.text):
+        try:
+            chat = bot.getChat(chat_id)
+            bot_member = chat.get_member(bot.id)
+            if bot_member.can_invite_users:
+                invitelink = bot.exportChatInviteLink(chat_id)
+                links += str(chat_id) + ":\n" + invitelink + "\n"
+            else:
+                links += str(chat_id) + ":\nI don't have access to the invite link." + "\n"
+        except BadRequest as excp:
+                links += str(chat_id) + ":\n" + excp.message + "\n"
+        except TelegramError as excp:
+                links += str(chat_id) + ":\n" + excp.message + "\n"
 
+    message.reply_text(links)
 
 @bot_admin
 def leavechat(bot: Bot, update: Update, args: List[int]):
