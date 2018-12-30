@@ -8,7 +8,7 @@ from tg_bot import dispatcher
 
 from requests import get
 
-LYRICSINFO = "\n[Full Lyrics](http://lyrics.wikia.com/wiki/%s:%s)"
+LYRICSINFO = "\n[Full Lyrics](https://www.azlyrics.com/lyrics/%s/%s.html)"
 
 @run_async
 def lyrics(bot: Bot, update: Update, args: List[str]):
@@ -32,11 +32,12 @@ def lyrics(bot: Bot, update: Update, args: List[str]):
         except ValueError as e:
             return update.effective_message.reply_text("Song %s not found :(" % song[1], failed=True)
         else:
+           
             lyricstext = LYRICSINFO % (song[0].replace(
-                " ", "_"), song[1].replace(" ", "_"))
-            return update.effective_message.reply_text(lyrics + lyricstext, parse_mode="MARKDOWN")
+                " ", ""), song[1].replace(" ", ""))
+            return update.effective_message.reply_text(lyrics + lyricstext.lower(), parse_mode="MARKDOWN")
     else:
-        return update.effective_message.reply_text("Invalid syntax- try Artist - Title!", failed=True)
+        return update.effective_message.reply_text("Invalid syntax - try Artist - Title! \n Example : Imagine Dragons - Machine", failed=True)
 
 
 __help__ = """
