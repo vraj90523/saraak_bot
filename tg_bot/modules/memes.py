@@ -4,7 +4,7 @@ from telegram import MessageEntity
 from telegram.ext import Filters, MessageHandler, run_async
 
 from tg_bot import dispatcher
-from tg_bot.modules.disable import DisableAbleCommandHandler
+from tg_bot.modules.disable import DisableAbleCommandHandler, DisableAbleRegexHandler
 
 re
 # D A N K module by @deletescape - based on https://github.com/wrxck/mattata/blob/master/plugins/copypasta.mattata
@@ -99,6 +99,13 @@ def shrug(bot: Bot, update: Update):
     else:
         message.reply_text(reply_msg, quote=True)
         
+@run_async
+def me_too(bot: Bot, update: Update):
+    message = update.effective_message
+    if random.randint(0, 100) > 60:
+        reply = random.choice(["Me too thanks", "Haha yes, me too", "Same lol", "Me irl"])
+        message.reply_text(reply)
+
 __help__ = "many memz"  # no help string
 
 __mod_name__ = "Memes"
@@ -115,6 +122,7 @@ BMOJI_HANDLER = DisableAbleCommandHandler("🅱️", bmoji)
 BMOJI_ALIAS_HANDLER = DisableAbleCommandHandler("️b", bmoji)
 OWO_HANDLER = DisableAbleCommandHandler("owo", owo)
 SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug)
+ME_TOO_THANKS_HANDLER = DisableAbleRegexHandler(r"(?i)me too", me_too, friendly="me_too")
 
 dispatcher.add_handler(COPYPASTA_HANDLER)
 dispatcher.add_handler(COPYPASTA_ALIAS_HANDLER)
@@ -128,3 +136,4 @@ dispatcher.add_handler(BMOJI_HANDLER)
 dispatcher.add_handler(BMOJI_ALIAS_HANDLER)
 dispatcher.add_handler(OWO_HANDLER)
 dispatcher.add_handler(SHRUG_HANDLER)
+dispatcher.add_handler(ME_TOO_THANKS_HANDLER)
