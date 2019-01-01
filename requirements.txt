@@ -14,13 +14,9 @@ gTTS
 telegram
 zalgo_text
 feedparser
-pynewtonmath
 bs4
 lxml
 pyowm
 spongemock
 geopy
-gsearch
-wikipedia
 PyLyrics
-googletrans
