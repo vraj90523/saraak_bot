@@ -22,11 +22,10 @@ PM_START_TEXT = """
 Hi {}, my name is {}! If you have any questions on how to use me, read /help .
 
 I'm a group manager bot maintained by [This Guy](tg://user?id={}). I'm built in python3, using the \
-python-telegram-bot library, and am fully open source [Source-Link]github.com/Yasir-siddiqui/Joker_dabot)!
+python-telegram-bot library, and am fully open source [Source-Link](github.com/Yasir-siddiqui/Joker_dabot)!
 
 Feel free to submit pull requests on github, or contact [my owner](t.me/Yasirsiddiqui), with any bugs, questions \
-or feature requests you might have :)
-I also have a news channel, @JokerHarleynews for announcements on new features, downtime, etc.
+or feature requests you have | Also have a news channel, @JokerHarleynews for announcements on new features, downtime, etc.
 
 You can find the list of available commands with /help.
 
