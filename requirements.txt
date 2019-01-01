@@ -14,6 +14,7 @@ gTTS
 telegram
 zalgo_text
 feedparser
+py_translator
 bs4
 lxml
 pyowm
