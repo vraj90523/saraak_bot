@@ -20,9 +20,9 @@ from geopy.geocoders import Nominatim
 from telegram import Location
 
 RUN_STRINGS = (
-    "Where do you think you're going?",
-    "Huh? what? did they get away?",
-    "ZZzzZZzz... Huh? what? oh, just them again, nevermind.",
+    "You know you are not funnny shh go away",
+    "I think you want ban!",
+    "Go Run and Burn 69 Calories.",
     "Get back here!",
     "Not so fast...",
     "Look out for the wall!",
@@ -270,7 +270,7 @@ def info(bot: Bot, update: Update, args: List[str]):
     text += "\nPermanent user link: {}".format(mention_html(user.id, "link"))
 
     if user.id == OWNER_ID:
-        text += "\n\nThis person is my owner - I would never do anything against them!"
+        text += "\n\nThis person is my owner - So don't Mess with him!"
     else:
         if user.id in SUDO_USERS:
             text += "\nThis person is one of my sudo users! " \
@@ -392,7 +392,7 @@ def markdown_help(bot: Bot, update: Update):
 
 @run_async
 def stats(bot: Bot, update: Update):
-    update.effective_message.reply_text("Current stats:\n" + "\n".join([mod.__stats__() for mod in STATS]))
+    update.effective_message.reply_text("Current stats Lol:\n" + "\n".join([mod.__stats__() for mod in STATS]))
 
 
 def gps(bot: Bot, update: Update, args: List[str]):
