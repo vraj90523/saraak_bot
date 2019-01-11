@@ -80,11 +80,6 @@ def gizoogle(bot: Bot, update: Update):
         	        update.message.reply_text(giz_text)
 
 
-__help__ = """
-- /420: reply ta a text wit /420 n' peep how tha replied text gets translated up in tha gangsta slang.
-"""
-
-__mod_name__ = "Tranzizzle"
 
 GIZOOGLE_HANDLER = DisableAbleCommandHandler("420", gizoogle)
 

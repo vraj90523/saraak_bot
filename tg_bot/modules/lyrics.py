@@ -40,11 +40,6 @@ def lyrics(bot: Bot, update: Update, args: List[str]):
         return update.effective_message.reply_text("Invalid syntax - try Artist - Title! \n Example : Imagine Dragons - Machine", failed=True)
 
 
-__help__ = """
- - /lyrics <keyword> Find your favourite songs' lyrics
-"""
-
-__mod_name__ = "Lyrics"
 
 LYRICS_HANDLER = DisableAbleCommandHandler("lyrics", lyrics, pass_args=True)
 

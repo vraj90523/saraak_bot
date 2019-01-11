@@ -264,8 +264,9 @@ __help__ = """
  - /bluetext : check urself :V
  - /roll : Roll a dice.
  - /rlg : Join ears,nose,mouth and create an emo ;-;
- - /zal <any text> : zalgofy! your text
- Lyrics Plugin will take some moar time to come up.
+ - /zal <any text> : zalgofy! your tex Lyrics Plugin will take some moar time to come up.t
+-  /420: reply ta a text wit /420 n' peep how tha replied text gets translated up in tha gangsta slang.
+-  /lyrics <keyword> Find your favourite songs' lyrics
 """
 
 __mod_name__ = "Extras"
