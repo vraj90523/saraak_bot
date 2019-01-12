@@ -67,6 +67,7 @@ def promote(bot: Bot, update: Update, args: List[str]) -> str:
     
     print(ls)
 
+    message.reply_text("Successfully promoted in *{}*!".format(chatD.title), parse_mode=ParseMode.MARKDOWN)
     return "<b>{}:</b>" \
            "\n#PROMOTED" \
            "\n<b>Admin:</b> {}" \
@@ -124,6 +125,8 @@ def demote(bot: Bot, update: Update, args: List[str]) -> str:
                               can_restrict_members=False,
                               can_pin_messages=False,
                               can_promote_members=False)
+
+        message.reply_text(chat.id, "Succesfully Demoted!")
         return "<b>{}:</b>" \
                "\n#DEMOTED" \
                "\n<b>Admin:</b> {}" \

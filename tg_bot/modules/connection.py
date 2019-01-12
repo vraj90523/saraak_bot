@@ -56,7 +56,7 @@ def connect_chat(bot, update, args):
                 connection_status = sql.connect(update.effective_message.from_user.id, connect_chat)
                 if connection_status:
                     chat_name = dispatcher.bot.getChat(connected(bot, update, chat, user.id, need_admin=False)).title
-                    update.effective_message.reply_markdown(chat.id, "Successfully connected to *{}*".format(chat_name), parse_mode=ParseMode.MARKDOWN)
+                    update.effective_message.reply_text("Succesfully Connected to given chat!")
 
                     #Add chat to connection history
                     history = sql.get_history(user.id)
