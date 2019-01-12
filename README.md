@@ -1,4 +1,7 @@
 # tgbot
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0102a2844a0949a986ac5eca84cf5b74)](https://app.codacy.com/app/Yasir-siddiqui/Joker_dabot?utm_source=github.com&utm_medium=referral&utm_content=Yasir-siddiqui/Joker_dabot&utm_campaign=Badge_Grade_Dashboard)
+
 A modular telegram Python bot running on python3 with an sqlalchemy database.
 
 Originally a simple group management bot with multiple admin features, it has evolved, becoming extremely modular and 
