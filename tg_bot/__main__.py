@@ -24,7 +24,7 @@ Hi {}, my name is {}! If you have any questions on how to use me, read /help .
 I'm a group manager bot maintained by [This Guy](tg://user?id={}). I'm built in python3, using the \
 python-telegram-bot library!
 
-Feel free to submit pull requests on github, or contact [my owner](t.me/Aditya19v), with any bugs, questions \
+Feel free to submit pull requests on github, or contact [my owner](t.me/Aditya19v), with any bugs, questions 
 or feature requests you have | Also have a news channel, @saraak_gb for announcements on new features, downtime, etc.
 
 You can find the list of available commands with /help.
