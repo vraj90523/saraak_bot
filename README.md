@@ -7,7 +7,7 @@ A modular telegram Python bot running on python3 with an sqlalchemy database.
 Originally a simple group management bot with multiple admin features, it has evolved, becoming extremely modular and 
 simple to use.
 
-Can be found on telegram as [Joker](https://t.me/Joker_dabot).
+Can be found on telegram as [Sara](https://t.me/saraak_bot).
 
 
 Join the [news channel](https://t.me/JokerHarleynews) if you just want to stay in the loop about new features or
