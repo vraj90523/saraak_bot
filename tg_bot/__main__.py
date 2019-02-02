@@ -26,7 +26,7 @@ python-telegram-bot library!
 
 Feel free to submit pull requests on github, or contact [my owner](t.me/aditya19v)
 , with any bugs, questions 
-or feature requests you have | Also have a news channel, [@saraak_gb](t.me/saraak_gb) for announcements on new features, downtime, etc.
+or feature requests you have | Also have a news channel, @saraakhelp for announcements on new features, downtime, etc.
 
 You can find the list of available commands with /help.
 
