@@ -10,7 +10,7 @@ simple to use.
 Can be found on telegram as [Sara](https://t.me/saraak_bot).
 
 
-Join the [news channel](https://t.me/JokerHarleynews) if you just want to stay in the loop about new features or
+Join the [news channel](https://t.me/saraak_gb) if you just want to stay in the loop about new features or
 announcements.
 
 Alternatively, [find me on telegram](https://t.me/aditya19v)!.
