@@ -24,16 +24,16 @@ Hi {}, my name is {}! If you have any questions on how to use me, read /help .
 I'm a group manager bot maintained by [This Guy](tg://user?id={}). I'm built in python3, using the \
 python-telegram-bot library!
 
-Contact @aditya19v
-, with any bugs, questions 
-or feature requests you have | Also have a news channel, @saraakhelp for announcements on new features, downtime, etc.
+Contact @aditya19v, with any bugs, questions or feature requests you have | Also have a news channel, @saraakhelp for announcements on new features, downtime, etc.
 
 You can find the list of available commands with /help.
 
-
-
-Add me as an Administrator in your group to use me☺️
+Add me as an Administrator in your group to start using me.☺️
 """
+
+
+
+
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
