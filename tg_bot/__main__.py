@@ -21,14 +21,14 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 PM_START_TEXT = """
 Hi {}, my name is {}! If you have any questions on how to use me, read /help .
 
-I'm a group manager bot maintained by [This Guy](tg://user?id={}). I'm built in python3, using the \
-python-telegram-bot library!
-
-Contact @aditya19v, with any bugs, questions or feature requests you have | Also have a news channel, @saraakhelp for announcements on new features, downtime, etc.
+I'm a group manager bot maintained by [This Guy](tg://user?id={}). 
+and am fully Open-source you can find me [here](github.com/adi19v/saraak_bot)!
 
 You can find the list of available commands with /help.
 
-Add me as an Administrator in your group to start using me.☺️
+If you're enjoying using me, and/or would like to help me survive in the wild, hit /donate to help fund/upgrade my VPS!
+
+[Click here to add me in your groups](https://telegram.me/Joker_dabot?startgroup=add)
 """
 
 
