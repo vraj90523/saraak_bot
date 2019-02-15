@@ -7,13 +7,13 @@ A modular telegram Python bot running on python3 with an sqlalchemy database.
 Originally a simple group management bot with multiple admin features, it has evolved, becoming extremely modular and 
 simple to use.
 
-Can be found on telegram as [Sara](https://t.me/saraak_bot).
+Can be found on telegram as [technobuzznet bot](https://t.me/Technobuzznet_bot). 
 
 
-Join the [news channel](https://t.me/saraak_help) if you just want to stay in the loop about new features or
+Join the [news channel](https://t.me/miui10themes) if you just want to stay in the loop about new features or
 announcements.
 
-Alternatively, [find me on telegram](https://t.me/aditya19v)!.
+Alternatively, [find me on telegram](https://t.me/vikash_raj)!.
 
 ## Starting the bot.
 
@@ -45,7 +45,7 @@ from tg_bot.sample_config import Config
 
 class Development(Config):
     OWNER_ID = xxxxxxxxx # my telegram ID
-    OWNER_USERNAME = "Aditya19v"  # my telegram username
+    OWNER_USERNAME = "vikash_raj"  # my telegram username
     API_KEY = "your bot api key"  # my api key, as provided by the botfather
     SQLALCHEMY_DATABASE_URI = 'postgresql://username:password@localhost:5432/database'  # sample db credentials
     MESSAGE_DUMP = '-1234567890' # some group chat that your bot is a member of
