@@ -22,7 +22,7 @@ PM_START_TEXT = """
 Hi {}, my name is {}! If you have any questions on how to use me, read /help .
 
 I'm a group manager bot maintained by [This Guy](tg://user?id={}). 
-and am fully Open-source you can find me [here](github.com/adi19v/saraak_bot)!
+and am fully Open-source you can find me [here](https://github.com/vraj90523/saraak_bot)!
 
 You can find the list of available commands with /help.
 
