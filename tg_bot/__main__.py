@@ -54,7 +54,7 @@ And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-If you want to donate, PM [Aditya](t.me/Aditya19v), and ask for donate. \
+If you want to donate, PM [Vikash](t.me/vikash_raj), and ask for donate. \
 If you really want to donate, it could really help me to upgrade my VPS."""
 
 IMPORTED = {}
