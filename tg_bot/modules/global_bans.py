@@ -94,7 +94,8 @@ def gban(bot: Bot, update: Update, args: List[str]):
             message.reply_text("This user is already gbanned, but had no reason set; I've gone and updated it!")
 
         return
-
+    
+    message.reply_text("*Blows dust off of banhammer* 😉")
 
     banner = update.effective_user  # type: Optional[User]
     send_to_list(bot, SUDO_USERS + SUPPORT_USERS,
