@@ -156,7 +156,8 @@ def ungban(bot: Bot, update: Update, args: List[str]):
         return
 
     banner = update.effective_user  # type: Optional[User]
-
+    
+   message.reply_text("I'll give {} a second chance, globally.".format(user_chat.first_name))
 
     send_to_list(bot, SUDO_USERS + SUPPORT_USERS,
                  "<b>Regression of Global Ban</b>" \
