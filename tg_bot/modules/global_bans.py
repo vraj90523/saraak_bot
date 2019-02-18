@@ -156,8 +156,6 @@ def ungban(bot: Bot, update: Update, args: List[str]):
         return
 
     banner = update.effective_user  # type: Optional[User]
-    
-   message.reply_text("chal {} diya tujhe ek mauka.".format(user_chat.first_name))
 
     send_to_list(bot, SUDO_USERS + SUPPORT_USERS,
                  "<b>Regression of Global Ban</b>" \
