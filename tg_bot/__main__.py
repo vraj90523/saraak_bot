@@ -55,6 +55,7 @@ And the following:
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 If you want to donate, PM [Vikash](t.me/vikash_raj), and give him a paytm lifafa \
+or pay [here](https://p-y.tm/Tw2N-Kb),
 If you really want to donate, it could really help me to upgrade my VPS."""
 
 IMPORTED = {}
